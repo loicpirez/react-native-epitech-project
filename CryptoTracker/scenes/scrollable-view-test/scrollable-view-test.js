@@ -5,7 +5,7 @@ import TestContentScroll from './components/test-content-scroll';
 import TestFooter from './components/test-footer';
 
 const ScrollableViewTest = () => (
-  <SceneContainer style={{backgroundColor: '#e8e8e8'}}>
+  <SceneContainer style={{ backgroundColor: '#e8e8e8' }}>
     <TestHeader />
     <TestContentScroll
       list={[
