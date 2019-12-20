@@ -18,7 +18,7 @@ const Login = ({componentId}) => (
     <Image source={Logo} />
     <Container style={{width: '100%'}}>
       <Input placeholder="Email" />
-      <Input placeholder="Password" />
+      <Input placeholder="Mot de passe" secureTextEntry />
       <Button
         title="Connexion"
         containerStyle={{marginTop: 20}}
