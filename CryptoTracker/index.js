@@ -1,9 +1,16 @@
-/**
- * @format
- */
+import {Navigation} from 'react-native-navigation';
+import registerScreens from './src/navigation/screens';
+//import configureAxios from './src/utils/axios/configure-axios';
 
-import {AppRegistry} from 'react-native';
-import Root from './src/root';
-import {name as appName} from './app.json';
+registerScreens();
+//configureAxios();
 
-AppRegistry.registerComponent(appName, () => Root);
+Navigation.events().registerAppLaunchedListener(() => {
+  Navigation.setRoot({
+    root: {
+      component: {
+        name: 'SplashScreen',
+      },
+    },
+  });
+});
