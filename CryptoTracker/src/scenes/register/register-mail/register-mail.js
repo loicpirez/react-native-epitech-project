@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Navigation} from 'react-native-navigation';
 import {Text, Input, Button} from 'react-native-elements';
 import SceneContainer from '../../../components/scene-container';
+import LoginModule from '../../../components/login-module';
 import Container from '../../../components/container';
 
 const RegisterMail = ({componentId}) => {
@@ -14,23 +15,9 @@ const RegisterMail = ({componentId}) => {
       <Text h4 style={{textAlign: 'center'}}>
         Veuillez saisir vos identifiants de connexion
       </Text>
-      <Container style={{width: '100%'}}>
-        <Input
-          value={email}
-          onChangeText={text => setEmail(text)}
-          placeholder="Email"
-        />
-        <Input
-          value={password}
-          onChangeText={text => setPassword(text)}
-          placeholder="Mot de passe"
-          secureTextEntry
-        />
-      </Container>
-      <Button
-        title="Suivant"
-        containerStyle={{marginTop: 20}}
-        onPress={() =>
+      <LoginModule
+        buttonTitle="Suivant"
+        onPress={data =>
           Navigation.push(componentId, {
             component: {
               id: 'RegisterPassword',
@@ -44,7 +31,7 @@ const RegisterMail = ({componentId}) => {
                   },
                 },
               },
-              passProps: {email, password},
+              passProps: {...data},
             },
           })
         }

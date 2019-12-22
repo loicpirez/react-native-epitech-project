@@ -1,33 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Navigation} from 'react-native-navigation';
+import { Navigation } from 'react-native-navigation';
 import SceneContainer from '../../components/scene-container';
 import Image from '../../components/image';
-import Container from '../../components/container';
-import {Input, Button} from 'react-native-elements';
-import {goHome} from '../../navigation/navigator/navigator';
+import LoginModule from '../../components/login-module';
+import { Button } from 'react-native-elements';
+import { goHome } from '../../navigation/navigator/navigator';
 import Logo from '../../assets/logo/logo.png';
 
-const Login = ({componentId}) => (
+const Login = ({ componentId }) => (
   <SceneContainer
     style={{
       padding: 50,
       justifyContent: 'space-evenly',
-      alignItems: 'center',
-    }}>
+      alignItems: 'center'
+    }}
+  >
     <Image source={Logo} />
-    <Container style={{width: '100%'}}>
-      <Input placeholder="Email" />
-      <Input placeholder="Mot de passe" secureTextEntry />
-      <Button
-        title="Connexion"
-        containerStyle={{marginTop: 20}}
-        onPress={() => goHome()}
-      />
-    </Container>
+    <LoginModule buttonTitle="Connexion" onPress={data => goHome(data)} />
     <Button
       title="Inscription"
-      containerStyle={{width: '100%'}}
+      containerStyle={{ width: '100%' }}
       onPress={() =>
         Navigation.push(componentId, {
           component: {
@@ -38,11 +31,11 @@ const Login = ({componentId}) => (
                 visible: true,
                 title: {
                   text: 'Inscription',
-                  alignment: 'center',
-                },
-              },
-            },
-          },
+                  alignment: 'center'
+                }
+              }
+            }
+          }
         })
       }
     />
@@ -50,7 +43,7 @@ const Login = ({componentId}) => (
 );
 
 Login.propTypes = {
-  componentId: PropTypes.string.isRequired,
+  componentId: PropTypes.string.isRequired
 };
 
 export default Login;

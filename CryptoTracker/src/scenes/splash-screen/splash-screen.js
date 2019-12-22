@@ -21,3 +21,5 @@ const SplashScreen = () => {
 };
 
 export default SplashScreen;
+
+// Check si il y a un token ou pas, si oui, goHome, sinon goAuth
