@@ -13,7 +13,8 @@ import com.reactnativenavigation.react.ReactGateway;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
-
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
+import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage;
 public class MainApplication extends NavigationApplication {
   @Override
   protected ReactGateway createReactGateway() {
@@ -36,6 +37,8 @@ public class MainApplication extends NavigationApplication {
         // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
         // eg. new VectorIconsPackage()
+        new ReactNativeFirebaseAppPackage(),
+        new ReactNativeFirebaseAuthPackage()
     );
   }
 
