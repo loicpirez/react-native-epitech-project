@@ -1,3 +1,3 @@
-import {ScrollView as ContainerScroll} from 'react-native';
+import { ScrollView as ContainerScroll } from 'react-native';
 
 export default ContainerScroll;

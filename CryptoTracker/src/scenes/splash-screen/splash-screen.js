@@ -1,23 +1,25 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import SceneContainer from '../../components/scene-container';
 import Image from '../../components/image';
 import logo from '../../assets/logo/logo.png';
-import {goHome} from '../../navigation/navigator/navigator';
+import { goAuth, goHome } from '../../navigation/navigator/navigator';
 
 const SplashScreen = () => {
   useEffect(() => {
     async function init() {
       setTimeout(() => {
-        goHome();
-      }, 4000);
+        goAuth();
+      }, 1000);
     }
     init();
   }, []);
   return (
-    <SceneContainer style={{alignItems: 'center', justifyContent: 'center'}}>
+    <SceneContainer style={{ alignItems: 'center', justifyContent: 'center' }}>
       <Image source={logo} />
     </SceneContainer>
   );
 };
 
 export default SplashScreen;
+
+// Check si il y a un token ou pas, si oui, goHome, sinon goAuth
