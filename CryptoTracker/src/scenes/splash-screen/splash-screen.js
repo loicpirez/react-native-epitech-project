@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import SceneContainer from '../../components/scene-container';
 import Image from '../../components/image';
 import logo from '../../assets/logo/logo.png';
-import {goAuth, goHome} from '../../navigation/navigator/navigator';
+import { goAuth, goHome } from '../../navigation/navigator/navigator';
 
 const SplashScreen = () => {
   useEffect(() => {
@@ -14,7 +14,7 @@ const SplashScreen = () => {
     init();
   }, []);
   return (
-    <SceneContainer style={{alignItems: 'center', justifyContent: 'center'}}>
+    <SceneContainer style={{ alignItems: 'center', justifyContent: 'center' }}>
       <Image source={logo} />
     </SceneContainer>
   );
