@@ -1,3 +1,3 @@
-import {goHome} from './navigator';
+import { goHome } from './navigator';
 
-export default {goHome};
+export default { goHome };

@@ -13,7 +13,7 @@ import com.reactnativenavigation.react.ReactGateway;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
-
+import org.reactnative.camera.RNCameraPackage;
 public class MainApplication extends NavigationApplication {
   @Override
   protected ReactGateway createReactGateway() {
@@ -35,6 +35,7 @@ public class MainApplication extends NavigationApplication {
         // Add additional packages you require here
         // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
+      new RNCameraPackage()
         // eg. new VectorIconsPackage()
     );
   }
